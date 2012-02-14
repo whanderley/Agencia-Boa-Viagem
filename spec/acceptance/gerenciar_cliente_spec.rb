@@ -44,4 +44,13 @@ feature 'gerenciar cliente' do
     page.should have_content 'Email: Zezinho@gmail.com'
     
   end
+scenario 'excluir especialidade' do #, :javascript => true do
+    cliente = Cliente.create nome: 'zezinho'
+    visit cliente_path
+
+    click_link 'Destroy'
+    
+    Cliente.count.should == 0
+end
+
 end
