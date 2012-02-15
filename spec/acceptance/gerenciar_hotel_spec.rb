@@ -41,13 +41,14 @@ feature 'gerenciar hotel' do
     page.should have_content 'Telefone: 99999999'
     page.should have_content 'Site: naraka.com.br'    
   end
-#  scenario 'excluir especialidade' do #, :javascript => true do
-#      hotel = hotel.create nome: 'Naraka'
-#      visit hotel_path
 
-#      click_link 'Destroy'
-#      
-#      hotel.count.should == 0
-#  end
+  scenario 'excluir hotel' do #, :javascript => true do
+      hotel = Hotel.create nome: 'Naraka'
+      visit hotel_path
+
+      click_link 'Destroy'
+      
+      Hotel.count.should == 0
+  end
 
 end

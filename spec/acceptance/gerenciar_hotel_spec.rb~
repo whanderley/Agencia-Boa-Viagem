@@ -25,7 +25,7 @@ feature 'gerenciar hotel' do
   end
 
   scenario 'alterar hotel' do #, :javascript => true do
-    hotel = hotel.create nome: 'Naraka'
+    hotel = Hotel.create nome: 'Naraka'
     visit edit_hotel_path(hotel)
     fill_in 'hotel_nome', :with => 'Naraka'
     fill_in 'hotel_endereco', :with => 'Rua Dos bobos'
@@ -41,13 +41,14 @@ feature 'gerenciar hotel' do
     page.should have_content 'Telefone: 99999999'
     page.should have_content 'Site: naraka.com.br'    
   end
-#  scenario 'excluir especialidade' do #, :javascript => true do
-#      hotel = hotel.create nome: 'Naraka'
-#      visit hotel_path
 
-#      click_link 'Destroy'
-#      
-#      hotel.count.should == 0
-#  end
+  scenario 'excluir hotel' do #, :javascript => true do
+      hotel = Hotel.create nome: 'Naraka'
+      visit hotel_path
+
+      click_link 'Destroy'
+      
+      hotel.count.should == 0
+  end
 
 end
