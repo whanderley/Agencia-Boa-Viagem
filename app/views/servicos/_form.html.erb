@@ -1,0 +1,26 @@
+<%= form_for(@servico) do |f| %>
+  <% if @servico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@servico.errors.count, "error") %> prohibited this servico from being saved:</h2>
+
+      <ul>
+      <% @servico.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br />
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

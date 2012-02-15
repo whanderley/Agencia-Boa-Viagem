@@ -13,6 +13,7 @@ gem 'formtastic', '~> 2.0.2'
 gem 'cocoon', '~> 1.0.15'
 gem 'flexible_date', '~> 0.4.1'
 gem 'brazilian-rails', '~>3.0.8'
+gem 'pry', '~> 0.9.8'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
