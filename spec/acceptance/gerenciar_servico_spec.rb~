@@ -24,9 +24,19 @@ feature 'gerenciar servico' do
     fill_in 'servico_titulo', :with => 'Massagem'
     fill_in 'servico_descricao', :with => 'blabla'
 
-    click_button 'Create Servico'
+    click_button 'Update Servico'
 
     page.should have_content 'Titulo: Massagem'
     page.should have_content 'Descrição: blabla'    
   end
+
+  scenario 'excluir servico' do #, :javascript => true do
+      servico = Servico.create titulo: 'lol'
+      visit servico_path
+
+      click_link 'Destroy'
+      
+      servico.count.should == 0
+  end
+
 end

@@ -29,4 +29,14 @@ feature 'gerenciar servico' do
     page.should have_content 'Titulo: Massagem'
     page.should have_content 'Descrição: blabla'    
   end
+
+  scenario 'excluir servico' do #, :javascript => true do
+      servico = Servico.create titulo: 'lol'
+      visit servico_path
+
+      click_link 'Destroy'
+      
+      Servico.count.should == 0
+  end
+
 end

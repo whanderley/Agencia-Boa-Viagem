@@ -50,7 +50,7 @@ scenario 'excluir especialidade' do #, :javascript => true do
 
     click_link 'Destroy'
     
-    Especialidade.count.should == 0
+    Cliente.count.should == 0
 end
 
 end
