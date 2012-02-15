@@ -1,4 +1,6 @@
 AgenciaBoaViagem::Application.routes.draw do
+  resources :hotels
+
   resources :servicos
 
   resources :clientes
