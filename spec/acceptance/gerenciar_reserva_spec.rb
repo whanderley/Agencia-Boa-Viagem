@@ -28,14 +28,23 @@ feature 'gerenciar reserva' do
     reserva = Reserva.create    
     visit edit_reserva_path(reserva)
     
-    fill_in 'reserva_modo_de_pagamento', :with => 'dinheiro'
+    fill_in 'reserva_modo_de_pagamento', :with => 'cartao de credito'
     select('Gilmar das Candongas', from: "Cliente")
     select('Luxo', from: "Pacote")
           
     click_button 'Salvar'
    
-    page.should have_content 'Modo de pagamento: dinheiro'
+    page.should have_content 'Modo de pagamento: cartao de credito'
     page.should have_content 'Cliente: Gilmar das Candongas'
     page.should have_content 'Pacote: Luxo'
+  end
+
+  scenario 'excluir reserva' do #, :javascript => true do
+      hotel = Reserva.create
+      visit reserva_path
+
+      click_link 'Destroy'
+      
+      Reserva.count.should == 0
   end
 end
