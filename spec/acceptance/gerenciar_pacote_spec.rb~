@@ -17,7 +17,7 @@ feature 'gerenciar pacote' do
     fill_in 'pacote_pontos', :with => '3'
     fill_in 'pacote_pontos_requeridos', :with => '48'
     select('Palace', from: "Hotel")
-    select('Massagem Indiana', from: "Servico")
+    select('Massagem Indiana', from: "Serviço")
           
     click_button 'Salvar'
    
