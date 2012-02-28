@@ -54,4 +54,13 @@ feature 'gerenciar pacote' do
     page.should have_content 'Serviço: Massagem Indiana'
   end
 
+  scenario 'excluir pacote' do #, :javascript => true do
+      hotel = Pacote.create titulo: 'luxo'
+      visit pacote_path
+
+      click_link 'Destroy'
+      
+      Pacote.count.should == 0
+  end
+
 end
