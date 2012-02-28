@@ -1,0 +1,8 @@
+= semantic_form_for(@pacotes) do |f|
+  = f.input :titulo, :label => 'Titulo'
+  = f.input :descricao, :label => 'Descrição'
+  = f.input :preco, :label => 'Preço'
+  = f.input :pontos, :label => 'Pontos'
+  = f.input :pontos_requeridos, :label => 'Pontos Requeridos'
+  = f.input :hotel , :label => 'Hotel'
+  = f.submit 'Salvar'

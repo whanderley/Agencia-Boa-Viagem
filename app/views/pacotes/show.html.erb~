@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titulo:</b>
+  <%= @pacote.titulo %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @pacote.descricao %>
+</p>
+
+<p>
+  <b>Preco:</b>
+  <%= @pacote.preco %>
+</p>
+
+<p>
+  <b>Pontos:</b>
+  <%= @pacote.pontos %>
+</p>
+
+<p>
+  <b>Pontos requeridos:</b>
+  <%= @pacote.pontos_requeridos %>
+</p>
+
+<p>
+  <b>Hotel:</b>
+  <%= @pacote.hotel.nome %>
+</p>
+
+<p>
+  <b>Servico:</b>
+  <%= @pacote.servico.titulo %>
+</p>
+
+
+<%= link_to 'Edit', edit_pacote_path(@pacote) %> |
+<%= link_to 'Back', pacotes_path %>

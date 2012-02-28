@@ -4,8 +4,7 @@ describe "servicos/show" do
   before(:each) do
     @servico = assign(:servico, stub_model(Servico,
       :titulo => "Titulo",
-      :descricao => "Descricao",
-      :foto => ""
+      :descricao => "Descricao"
     ))
   end
 
@@ -15,7 +14,5 @@ describe "servicos/show" do
     rendered.should match(/Titulo/)
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Descricao/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
   end
 end

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Data da reserva:</b>
+  <%= @reserva.data_da_reserva %>
+</p>
+
+<p>
+  <b>Modo de pagamento:</b>
+  <%= @reserva.modo_de_pagamento %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @reserva.cliente %>
+</p>
+
+<p>
+  <b>Pacote:</b>
+  <%= @reserva.pacote %>
+</p>
+
+
+<%= link_to 'Edit', edit_reserva_path(@reserva) %> |
+<%= link_to 'Back', reservas_path %>

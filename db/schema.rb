@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215222141) do
+ActiveRecord::Schema.define(:version => 20120228140913) do
 
   create_table "clientes", :force => true do |t|
     t.string   "nome"
@@ -33,6 +33,33 @@ ActiveRecord::Schema.define(:version => 20120215222141) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "pacotes", :force => true do |t|
+    t.string   "titulo"
+    t.string   "descricao"
+    t.float    "preco"
+    t.integer  "pontos"
+    t.integer  "pontos_requeridos"
+    t.integer  "hotel_id"
+    t.integer  "servico_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "pacotes", ["hotel_id"], :name => "index_pacotes_on_hotel_id"
+  add_index "pacotes", ["servico_id"], :name => "index_pacotes_on_servico_id"
+
+  create_table "reservas", :force => true do |t|
+    t.date     "data_da_reserva"
+    t.string   "modo_de_pagamento"
+    t.integer  "cliente_id"
+    t.integer  "pacote_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "reservas", ["cliente_id"], :name => "index_reservas_on_cliente_id"
+  add_index "reservas", ["pacote_id"], :name => "index_reservas_on_pacote_id"
 
   create_table "servicos", :force => true do |t|
     t.string   "titulo"
