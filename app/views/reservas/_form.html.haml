@@ -1,0 +1,6 @@
+= semantic_form_for(@reserva) do |f|
+  = f.input :data_da_reserva, :label => 'Data'
+  = f.input :modo_de_pagamento, :label => 'Modo de pagamento'
+  = f.input :cliente , :label => 'Cliente', :label_method => :nome
+  = f.input :pacote , :label => 'Pacote', :label_method => :titulo
+  = f.submit 'Salvar'

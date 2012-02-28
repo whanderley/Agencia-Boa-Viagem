@@ -12,12 +12,12 @@
 
 <p>
   <b>Cliente:</b>
-  <%= @reserva.cliente.nome %>
+  <%= @reserva.cliente %>
 </p>
 
 <p>
   <b>Pacote:</b>
-  <%= @reserva.pacote.titulo %>
+  <%= @reserva.pacote %>
 </p>
 
 
