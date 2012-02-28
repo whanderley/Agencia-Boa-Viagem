@@ -13,7 +13,7 @@ feature 'gerenciar reserva' do
     
     fill_in 'reserva_modo_de_pagamento', :with => 'dinheiro'
     select('Gilmar das Candongas', from: "Cliente")
-    select('luxo', from: "Pacote")
+    select('Luxo', from: "Pacote")
           
     click_button 'Salvar'
    

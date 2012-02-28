@@ -21,4 +21,21 @@ feature 'gerenciar reserva' do
     page.should have_content 'Cliente: Gilmar das Candongas'
     page.should have_content 'Pacote: Luxo'
   end
+
+  scenario 'alterar reserva' do
+    cliente = Cliente.create nome: 'Gilmar das Candongas'
+    pacote = Pacote.create titulo: 'Luxo'
+    reserva = Reserva.create    
+    visit edit_reserva_path(reserva)
+    
+    fill_in 'reserva_modo_de_pagamento', :with => 'dinheiro'
+    select('Gilmar das Candongas', from: "Cliente")
+    select('Luxo', from: "Pacote")
+          
+    click_button 'Salvar'
+   
+    page.should have_content 'Modo de pagamento: dinheiro'
+    page.should have_content 'Cliente: Gilmar das Candongas'
+    page.should have_content 'Pacote: Luxo'
+  end
 end

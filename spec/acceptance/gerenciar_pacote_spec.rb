@@ -31,9 +31,10 @@ feature 'gerenciar pacote' do
   end
 
   scenario 'editar pacote' do
+    pacote = Pacote.create titulo: "basico"
     hotel = Hotel.create nome: 'Palace'
     servico = Servico.create titulo: 'Massagem Indiana'    
-    visit new_pacote_path
+    visit edit_pacote_path(pacote)
     
     fill_in 'pacote_titulo', :with => 'luxo'
     fill_in 'pacote_descricao', :with => 'pacote de luxo'
